@@ -1,5 +1,10 @@
 FROM node:22-alpine AS build
 WORKDIR /app
+# Use a mainland China npm mirror for both Corepack and pnpm dependency downloads.
+# This can be overridden at build time with --build-arg NPM_REGISTRY=...
+ARG NPM_REGISTRY=https://registry.npmmirror.com
+ENV COREPACK_NPM_REGISTRY=${NPM_REGISTRY} \
+    NPM_CONFIG_REGISTRY=${NPM_REGISTRY}
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 RUN corepack enable && pnpm install --frozen-lockfile
 COPY . .
