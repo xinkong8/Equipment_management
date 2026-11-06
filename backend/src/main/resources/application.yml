@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: equipment-management
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/equipment_management}
+    username: ${SPRING_DATASOURCE_USERNAME:equipment_user}
+    password: ${SPRING_DATASOURCE_PASSWORD:equipment_local_dev_2026}
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+server:
+  port: 8080
+
+app:
+  upload-dir: ${APP_UPLOAD_DIR:./storage/uploads}
+  jwt:
+    secret: ${APP_JWT_SECRET:change-this-to-a-long-random-development-secret-at-least-32-characters}
+    expiration-hours: 24

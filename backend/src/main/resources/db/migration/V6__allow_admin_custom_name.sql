@@ -1,0 +1,2 @@
+-- Administrators may maintain their own display name through the profile page.
+-- The existing name is intentionally preserved.

@@ -1,0 +1,22 @@
+# Local configuration and editor files
+.env
+.env.production
+.idea/
+.vscode/
+*.iml
+
+# Backend build output
+backend/target/
+
+# Frontend dependencies and build output
+frontend/node_modules/
+frontend/dist/
+frontend/*.tsbuildinfo
+
+# User-uploaded files (the directory itself is retained)
+storage/uploads/*
+!storage/uploads/.gitkeep
+
+# Local backups and archives
+backups/
+
