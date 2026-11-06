@@ -17,6 +17,7 @@ services:
   backend:
     build:
       context: ./backend
+      dockerfile: Dockerfile.production
     restart: unless-stopped
     environment:
       SPRING_PROFILES_ACTIVE: prod
@@ -27,7 +28,6 @@ services:
       APP_JWT_SECRET: ${APP_JWT_SECRET}
     volumes:
       - ./storage/uploads:/app/storage/uploads
-    command: mvn spring-boot:run
     depends_on:
       postgres:
         condition: service_healthy
