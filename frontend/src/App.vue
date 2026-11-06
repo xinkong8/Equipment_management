@@ -15,7 +15,7 @@ type HistoryEvent = { id: number; event_type: string; old_status?: string; new_s
 type Attachment = { id: number; file_name: string; file_type?: string; file_size?: number; created_at: string }
 type Profile = { username: string; name: string; role: 'ADMIN' | 'USER'; work_unit?: string; job_title?: string; phone?: string; email?: string; address?: string; remarks?: string }
 
-const api = import.meta.env.VITE_API_BASE_URL
+const api = import.meta.env.VITE_API_BASE_URL || '/api'
 const document = globalThis.document
 const user = ref<User | null>(JSON.parse(localStorage.getItem('equipment_user') || 'null'))
 const authMode = ref<'login' | 'register'>('login')
