@@ -4,7 +4,7 @@ SELECT setval(
         (SELECT MAX(CAST(SUBSTRING(equipment_code FROM 4) AS BIGINT))
          FROM equipment
          WHERE equipment_code ~ '^EQ-[0-9]+$'),
-        0
+        1
     ),
     EXISTS (SELECT 1 FROM equipment WHERE equipment_code ~ '^EQ-[0-9]+$')
 );
