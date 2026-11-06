@@ -16,5 +16,10 @@
   },
   "devDependencies": {
     "vue-tsc": "2.2.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }
